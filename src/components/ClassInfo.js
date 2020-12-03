@@ -114,7 +114,7 @@ class ClassInfo extends Component {
         let key;
         database.ref("class_member").on("value", (snapshot) => {
             snapshot.forEach((element) => {
-                if(element.val().studentid === this.state.editStudent.studentid) {
+                if(element.val().classid === this.props.classid && element.val().studentid === this.state.editStudent.studentid) {
                     key = element.key
                 }
             })
